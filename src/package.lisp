@@ -8,7 +8,9 @@
   (:use #:cl)
   (:nicknames #:alexandria-pure #:alex)
   (:export
-   ;; Control flow macros
+   #:with-alexandria-pure-timing
+   #:alexandria-pure-batch-process
+   #:alexandria-pure-health-check;; Control flow macros
    #:when-let
    #:when-let*
    #:if-let

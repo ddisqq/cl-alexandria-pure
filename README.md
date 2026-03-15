@@ -1,11 +1,17 @@
-# Alexandria Pure
+# cl-alexandria-pure
 
-Utility library providing specialized functionality for Common Lisp applications.
+`cl-alexandria-pure` provides a small, dependency-free subset of Alexandria-style
+utilities for Common Lisp projects that want lightweight helper functions without
+pulling in external libraries.
 
-## Features
+## Included helpers
 
-- Core functionality implementation
-- Pure Common Lisp (zero external dependencies)
+- Control-flow macros: `when-let`, `when-let*`, `if-let`, `if-let*`
+- List helpers: `ensure-list`, `flatten`, `mappend`, `lastcar`
+- Function helpers: `curry`, `rcurry`, `compose`
+- Hash-table helpers: `hash-table-keys`, `hash-table-values`, `alist-hash-table`
+- Sequence helpers: `shuffle`, `random-elt`, `iota`
+- Symbol helpers: `make-keyword`, `symbolicate`
 
 ## Installation
 
@@ -16,8 +22,11 @@ Utility library providing specialized functionality for Common Lisp applications
 ## Usage
 
 ```lisp
-;; Example usage
-(main-function)
+(cl-alexandria-pure:flatten '(1 (2 (3 4))))
+;; => (1 2 3 4)
+
+(funcall (cl-alexandria-pure:curry #'+ 10) 5)
+;; => 15
 ```
 
 ## Testing
@@ -26,14 +35,6 @@ Utility library providing specialized functionality for Common Lisp applications
 (asdf:test-system :cl-alexandria-pure)
 ```
 
-## API
-
-- `main-function - Primary function for core functionality`
-
 ## License
 
-Apache-2.0 License - See LICENSE file for details.
-
----
-Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
-SPDX-License-Identifier: Apache-2.0
+Apache-2.0. See `LICENSE`.
