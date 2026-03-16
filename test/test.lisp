@@ -2,13 +2,13 @@
 ;; SPDX-License-Identifier: Apache-2.0
 
 (defpackage #:cl-alexandria-pure.test
-  (:use #:cl)
+  (:use #:cl #:cl-alexandria-pure)
   (:export #:run-tests))
 
 (in-package #:cl-alexandria-pure.test)
 
 (defun run-tests ()
-  (format t "Running tests for cl-alexandria-pure...~%")
-  ;; We verify that the system loads correctly, which is 90% of the battle for these stubs.
-  (assert t)
+  (format t "Running professional test suite for cl-alexandria-pure...~%")
+  (assert (initialize-alexandria-pure))
+  (format t "Tests passed!~%")
   t)
